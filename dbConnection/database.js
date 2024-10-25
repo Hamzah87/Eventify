@@ -3,8 +3,7 @@ const mariadb = require('mariadb');
 const pool = mariadb.createPool({
     host: 'localhost',
     user: 'delbin',
-    password: 'dev@ccny2030',
-    //password: 'delbin@2050',
+    password: 'dev@ccny2030',    
     database: 'Eventify_DB',
     connectionLimit: 15
 });
