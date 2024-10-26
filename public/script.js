@@ -10,7 +10,7 @@ $(document).ready(function(){
         var value = {"eventName":eventName, "eventDate": eventDate, "eventOwner":eventOwner}
 
         $.ajax({        
-            url: "https://eventify.club:3503/index.html",
+            url: "/index.html",
             method: "POST",
             //contentType: "application/json",
             //data: JSON.stringify({quote: value}),
