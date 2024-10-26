@@ -43,7 +43,7 @@ router.post('^/$|/index(.html)?', async function(req,res){
             console.log(myEventID, '      ', myEventName); //print eventid and eventname to screen
 
             //create href elements for event
-            resVar = resVar + `<a href="event.html?eventId=${myEventID}">${myEventName}</a><br>`
+            resVar = resVar + `<a href="https://eventify.club:3503/event.html?eventId=${myEventID}">${myEventName}</a><br>`
         }
         
         //send the href elements to the window browser

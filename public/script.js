@@ -1,64 +1,4 @@
 $(document).ready(function(){
-    $("#eventListUpdateByName").on("submit", function(event){
-    event.preventDefault();
-    let value = $("#eventName").val();
-            
-        $.ajax({            
-            url: "/index",
-            method: "POST",
-            //dataType : "html",
-            contentType: "application/json",
-            data: JSON.stringify({quote: value}),
-            //data : data,            
-            success: function(res){                
-                $("#myQuote").html(`Quote: ${res.response}`);
-                
-            }
-        })
-    })
-});
-// https://stackoverflow.com/questions/18701282/what-is-content-type-and-datatype-in-an-ajax-request
-
-$(document).ready(function(){
-        $("#eventListUpdateByDate").on("submit", function(event){
-
-        event.preventDefault();
-        let value = $("#eventDate").val();
-            
-        $.ajax({            
-            url: "/index",
-            method: "POST",
-            contentType: "application/json",
-            data: JSON.stringify({quote: value}),
-            success: function(res){
-                //alert(value);
-                $("#myQuote").html(`Quote: ${res.response}`);
-            }
-        })
-    })
-});
-
-$(document).ready(function(){
-    $("#eventListUpdateByOwner").on("submit", function(event){
-
-    event.preventDefault();
-    let value = $("#eventOwner").val();
-        
-    $.ajax({        
-        url: "/index",
-        method: "POST",
-        contentType: "application/json",
-        data: JSON.stringify({quote: value}),
-        success: function(res){
-            $("#myQuote").html(`Quote: ${res.response}`);
-        }
-    })
-})
-});
-
-
-
-$(document).ready(function(){
     $("#generateEventLinks").on("submit", function(event){
 
         event.preventDefault();
@@ -70,7 +10,7 @@ $(document).ready(function(){
         var value = {"eventName":eventName, "eventDate": eventDate, "eventOwner":eventOwner}
 
         $.ajax({        
-            url: "/index",
+            url: "https://eventify.club:3503/index.html",
             method: "POST",
             //contentType: "application/json",
             //data: JSON.stringify({quote: value}),
