@@ -2,8 +2,11 @@
 //the site that can access your back end.  
 
 const whitelist=['https://www.eventify.club:3503', 'https://localhost:3503'];
-const corsOptions = {
+const corsOptions = {    
     origin: (origin, callback) => {
+        
+        //console.log("corsOptions function");
+
         if(whitelist.indexOf(origin) !== -1 || !origin){
             callback(null,true);
         }else{
