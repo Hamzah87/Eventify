@@ -1,7 +1,7 @@
 // from google website, enter the following in the dev console, fetch('http://localhost:3501')
 //the site that can access your back end.  
 
-const whitelist=['https://www.eventify.club:3503', 'https://localhost:3503'];
+const whitelist=['https://eventify.club:3503', 'https://localhost:3503'];
 const corsOptions = {    
     origin: (origin, callback) => {
         
