@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eventify - Welcome</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="javascript/script.js"></script>
 </head>
 <body>
     <!-- Hero Section (Landing Page) -->
@@ -12,7 +14,38 @@
         <div class="hero-content">
             <h1>Welcome to Eventify</h1>
             <p>Your Ultimate Event Planning Solution</p>
-            <a href="index.html" class="btn">Explore Eventify</a>
+
+            <div>
+                Search Event By<br>
+                <form action="/index.html" method="POST" id="generateEventLinks" name="generateEventLinks">
+                    <label for="eventName">Event Name:</label> &nbsp; 
+                    <input type="text" id="eventName" name="eventName"> 
+
+                    <br><br>
+
+                    <label for="eventDate">Event Date:</label> &nbsp; 
+                    <input type="text" id="eventDate" name="eventDate"> 
+
+                    <br><br>
+
+                    <label for="eventOwner">Event Owner:</label> &nbsp; 
+                    <input type="text" id="eventOwner" name="quote"> 
+                                    
+                    <input type="submit" value="Submit">
+                </form>
+
+                <div id="eventFoundLinks" name="eventFoundLinks"></div>  
+
+                <br><br><br>
+                <a href="event.html" class="btn">Explore Eventify</a>
+
+                <br><br><br>
+
+                <!-- <a href="ajax.ejs" class="btn">Ajax</a> -->
+
+
+            </div>
+            
         </div>
     </section>
 </body>
