@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
     let myUrl = href.substring(0,href.indexOf('?')); //get the page url
     console.log('myUrl: ' + myUrl);                  //print the page url
 
-    if(myUrl == 'https://localhost:3503/event.html' || 'https://eventify.club:3503/event.html') //if the url is the event.html page
+    if(myUrl == 'https://localhost:3503/event.html' || myUrl == 'https://eventify.club:3503/event.html') //if the url is the event.html page
     {
         let qs = getUrlVars();  //get the query string 
         //console.log(v);
