@@ -42,10 +42,12 @@ app.use('/', require('./routes/root'));
 app.all('*',(req, res) =>{
     console.log('404 not found')
 
+    console.log(req.url);
+
     res.status(404);
     if(req.accepts('html')){
         res.sendFile(path.join(__dirname, 'views', '404.html')); //send a 404 (not found) status
-    }else if(req.accepts('json ')){
+    }else if(req.accepts('json')){
         res.json({error: '404 Not Found'});
     }else{
         res.type('txt').send('404 Not Found');

@@ -4,24 +4,106 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eventify - Welcome</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="css/style.css">        
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>    
+    <script src="javascript/script.js"></script>    
+    <style>
+        .content{
+           padding: 20px;
+        }
+    </style>
+
+    <script type="text/javascript">
+        function test1()
+        {
+            alert('test1');
+        }
+    </script>
 
 </head>
-<body>
-    <!-- Hero Section (Landing Page) -->
-    <section class="hero">
-        <div class="hero-content">
+
+<body style="background-color: rgb(188, 192, 192);" >
+    <div class="container">
+               
+        <div  class="box">  
+            <a href="/index.html">
+                <img class="myImg" src="img/myImg.jpg" alt="Logo Image Goes Here"/>  
+            </a>
+        </div>
+       <!-- <div ><img  src="img/MyImg.jpg" alt="Francisco's image"/>  </div> -->
+       
+       <div  class="box">         
+          <div class="flex_container">
+
+             <div class="flex_box" id="flex_box1">GUEST LIST SUMMARY
+                <div id="childrenCntSummary" name="childrenCntSummary"></div>
+                <div id="adultsCntSummary" name="adultsCntSummary"></div>
+                <div id="totalCntSummary" name="totalCntSummary"></div>
+            </div>
+
+             <div class="flex_box" id="flex_box2">INVITES SUMMARY
+                <div id="pendingRSVPCnt" name="pendingRSVPCnt">Pending RSVP:</div>
+                <div id="receivedRSVPCnt" name="receivedRSVPCnt">Received RSVP:</div>
+                <div id="totalSVPCnt" name="totalSVPCnt">Total RSVP:</div>
+            </div>
+
+             <div class="flex_box" id="flex_box3">ANOTHER CONTAINER</div>
+
+          </div>
+       </div>
+
+        <div class="box ">
+            <div id="guestDetails" name="guestDetails" class="flex_container">
+                <div class="flex_box" id="flex_box4">FAMILY NAME
+                    <div id="familyName" name="familyName">
+                        <p style="display: inline;" id="line" name="line">Line</p>
+                        <p style="display: inline;">|</p>
+                        <p style="display: inline;" id="familyname" name="familyname">Name</p>
+                    </div>
+                </div>
+                 <div class="flex_box" id="flex_box5">GUEST INFORMATION
+                    <div id="guestInfo" name="guestInfo">
+                        <p style="display: inline;" id="adultCnt" name="adultCnt">Adults</p>
+                        <p style="display: inline;">|</p>
+                        <p style="display: inline;" id="childCnt" name="childCnt">Children</p>
+                        <p style="display: inline;">|</p>
+                        <p style="display: inline;" id="guestOf" name="guestOf">Guest Of</p>
+                    </div>
+                </div> 
+                <div class="flex_box" id="flex_box6">ADDRESS AND CONTACT
+                    <div id="addressAndContact" name="addressAndContact">
+                        <p style="display: inline;" id="address" name="address">Address</p>
+                        <p style="display: inline;">|</p>
+                        <p style="display: inline;" id="telefone" name="telefone">Telefone</p>
+                        <p style="display: inline;">|</p>
+                        <p style="display: inline;" id="email" name="email">Email</p>
+                    </div>
+                </div>  
+            </div> 
+        </div>   
+
+       <!-- <div class="box content">
+
             <h1>Welcome to Eventify</h1>
-            
             <div>
-                <h1>Event page</h1>
+                <h1>Event page1</h1>
 
                 <form action="/event.html" method="POST" id="eventLinksfrm" name="eventLinksfrm">
                 </form>                
-            </div>            
-        </div>
-    </section>
-</body>
+            </div>  
+
+       </div>       -->
+       
+       <!-- <div class="box content">info </div>
+       <div class="box">info </div>
+       <div class="box">info </div>
+       <div class="box">info </div> -->
+
+
+       <div class="box">Footer</div>
+ 
+    </div>
+ 
+ </body>
+
 </html>
