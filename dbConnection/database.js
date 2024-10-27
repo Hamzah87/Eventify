@@ -4,7 +4,7 @@ const pool = mariadb.createPool({
     host: 'localhost',
     user: 'delbin',
     password: 'dev@ccny2030',    
-    database: 'Eventify_DB1',
+    database: 'Eventify_DB',
     connectionLimit: 15
 });
 
