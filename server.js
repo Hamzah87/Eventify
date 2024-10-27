@@ -42,6 +42,8 @@ app.use('/', require('./routes/root'));
 app.all('*',(req, res) =>{
     console.log('404 not found')
 
+    console.log(req.url);
+
     res.status(404);
     if(req.accepts('html')){
         res.sendFile(path.join(__dirname, 'views', '404.html')); //send a 404 (not found) status
