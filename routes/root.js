@@ -14,6 +14,10 @@ router.post('^/$|/index(.html)?', async function(req,res){
     try{
         console.log('index.html POST method');
                   
+        let hostName = req.hostname;
+        console.log('hostName: ', hostName);
+    
+
         console.log(req.body);                                
         const { eventName, eventDate, eventOwner } = req.body;        
         
@@ -44,7 +48,12 @@ router.post('^/$|/index(.html)?', async function(req,res){
 
             //create href elements for event
             //resVar = resVar + `<a href="https://eventify.club:3503/event.html?eventId=${myEventID}">${myEventName}</a><br>`
-            resVar = resVar + `<a href="https://localhost:3503/event.html?eventId=${myEventID}">${myEventName}</a><br>`
+            if(hostName=="localhost")
+                resVar = resVar + `<a href="https://localhost:3503/event.html?eventId=${myEventID}">${myEventName}</a><br>`;
+            else 
+                resVar = resVar + `<a href="https://eventify.club:3503/event.html?eventId=${myEventID}">${myEventName}</a><br>`;
+            
+
 
         }
         console.log("/index.html POST completed successfully");
@@ -72,6 +81,9 @@ router.get('/event(.html)?', async function(req,res){
 router.post('/event(.html)', async function(req,res){  
     
     console.log("/event.html POST started")
+
+    let hostName = req.hostname;
+    console.log('hostName: ', hostName);
 
     const query = req.query;
     console.log("query string: ", query);
@@ -142,11 +154,9 @@ router.post('/event(.html)', async function(req,res){
         RSVP_RSVP_Sent = rows[i]['RSVP_Sent'];
         RSVP_InvitationSent = rows[i]['InvitationSent'];
 
-        
-  
-        if(familyName ==1)
+        if(familyName == 1)
         {
-            myResult = myResult + `<div id='familyName' name='familyName'> <p style='display: inline;' id='line' name='line'>${i}</p>  <p style='display: inline;'>|</p> <p style='display: inline;' id='familyname' name='familyname'>${Contact_Name}</p>   </div>`
+            myResult = myResult + `<div id='familyName' name='familyName'> <p style='display: inline;' id='line' name='line'>${i}</p>  <p style='display: inline;'>|</p> <p style='display: inline;' id='familyname' name='familyname'>${Contact_Name}</p>   </div>`;
         }
         else if (guestInfo == 1)
         {
@@ -157,7 +167,7 @@ router.post('/event(.html)', async function(req,res){
                     `<p style="display: inline;" id="childCnt" name="childCnt">${GuestList_Children}</p>` +
                     '<p style="display: inline;">|</p>' +
                     `<p style="display: inline;" id="guestOf" name="guestOf">${GuestList_Guest_Of}</p>` +
-                '</div>'
+                '</div>';
         }
         else if(addressContact == 1)
         {
@@ -168,7 +178,7 @@ router.post('/event(.html)', async function(req,res){
                     `<p style="display: inline;" id="telefone" name="telefone">${Contact_Phone}</p>` +
                     '<p style="display: inline;">|</p>' +
                     `<p style="display: inline;" id="email" name="email">${Contact_Email}</p>` +
-                '</div>'
+                '</div>';
         }
         else if(childrenCntSummary == 1)
         {
@@ -187,7 +197,7 @@ router.post('/event(.html)', async function(req,res){
         console.log('');        
     }
 
-    console.log("/event.html GET completed successfully")
+    console.log("/event.html GET completed successfully");
         
     res.send(myResult);
 });
