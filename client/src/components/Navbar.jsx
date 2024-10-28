@@ -35,12 +35,12 @@ export function Navbar() {
             >
               Create Event
             </a>
-            <a
-              href="#"
+            <Link
+              to="/about" // Specify the path for the About page
               className="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400"
             >
               About
-            </a>
+            </Link>
             <ThemeToggle />
             <SignedOut>
               <SignInButton className="bg-indigo-600 dark:bg-indigo-500 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 dark:hover:bg-indigo-600">
