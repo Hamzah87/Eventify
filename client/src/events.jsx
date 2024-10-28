@@ -42,26 +42,22 @@ function Events() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {events.map((event) => (
               <div
-                key={event.id}
+                key={event.EventID}
                 className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 hover:shadow-xl transition-shadow duration-300"
               >
                 <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-2">
-                  {event.name}
+                  {event.EventName}
                 </h3>
                 <p className="text-gray-700 dark:text-gray-300 mb-1">
-                  <strong>Type:</strong> {event.type}
+                  <strong>Host:</strong> {event.GuestListOwner}
                 </p>
                 <p className="text-gray-700 dark:text-gray-300 mb-1">
-                  <strong>Location:</strong> {event.location}
-                </p>
-                <p className="text-gray-700 dark:text-gray-300 mb-1">
-                  <strong>Date:</strong> {event.date}
-                </p>
-                <p className="text-gray-700 dark:text-gray-300 mb-1">
-                  <strong>Guests:</strong> {event.guests}
-                </p>
-                <p className="text-gray-700 dark:text-gray-300 mb-1">
-                  <strong>Host:</strong> {event.hostName}
+                  <strong>Date:</strong>{" "}
+                  {new Date(event.EventDate).toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
                 </p>
               </div>
             ))}
