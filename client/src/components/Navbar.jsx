@@ -23,12 +23,12 @@ export function Navbar() {
             >
               Home
             </Link>
-            <a
-              href="#"
+            <Link
+              to="/events" 
               className="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400"
             >
               Events
-            </a>
+            </Link>
             <Link
               to="/createEvent" 
               className="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400"
