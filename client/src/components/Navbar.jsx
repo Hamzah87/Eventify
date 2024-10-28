@@ -17,24 +17,24 @@ export function Navbar() {
             </span>
           </div>
           <div className="hidden md:flex items-center space-x-8">
-            <a
-              href="#"
+          <Link
+              to="/" 
               className="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400"
             >
               Home
-            </a>
+            </Link>
             <a
               href="#"
               className="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400"
             >
               Events
             </a>
-            <a
-              href="#"
+            <Link
+              to="/createEvent" 
               className="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400"
             >
               Create Event
-            </a>
+            </Link>
             <Link
               to="/about" // Specify the path for the About page
               className="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400"

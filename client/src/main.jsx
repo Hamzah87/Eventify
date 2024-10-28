@@ -5,6 +5,7 @@ import App from './App.jsx';
 import { ClerkProvider } from '@clerk/clerk-react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import About from './about.jsx';
+import CreateEvent from './createEvent.jsx'
 
 // Import your publishable key
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
@@ -22,6 +23,7 @@ createRoot(document.getElementById('root')).render(
             <Route path="/" element={<App />} />
             {/* Additional routes for other components */}
             <Route path="/about" element={<About />} />
+            <Route path="/createEvent" element={<CreateEvent />} />
             
           </Routes>
       </Router>
