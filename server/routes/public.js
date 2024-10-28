@@ -4,6 +4,10 @@ const db = require("../db/config/db.config");
 const router = express.Router();
 
 router.get("/events/search", async (req, res) => {
+  res.set("Cache-Control", "no-store, no-cache, must-revalidate, private");
+  res.set("Expires", "0");
+  res.set("Pragma", "no-cache");
+
   let conn;
   try {
     const { title, date, organizer } = req.query;
@@ -50,6 +54,10 @@ router.get("/events/search", async (req, res) => {
 });
 
 router.get("/events/all", async (req, res) => {
+  res.set("Cache-Control", "no-store, no-cache, must-revalidate, private");
+  res.set("Expires", "0");
+  res.set("Pragma", "no-cache");
+
   let conn;
   try {
     let query = `
