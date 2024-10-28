@@ -64,7 +64,7 @@ router.get("/events/all", async (req, res) => {
       ORDER BY Schedule.EventDate DESC
     `;
 
-    rows = await db.query(query, params);
+    rows = await db.query(query);
     res.json(Array.isArray(rows) ? rows : [rows]);
   } catch (error) {
     console.error("Search error:", error);
