@@ -28,7 +28,7 @@ function Events() {
   return (
     <ThemeProvider>
       <Navbar />
-      <div className="min-h-screen bg-gradient-to-br from-indigo-600 to-indigo-800 dark:from-indigo-700 dark:to-indigo-900 py-10 px-6">
+      <div className="min-h-screen bg-gradient-to-br from-indigo-600 to-indigo-800 dark:from-indigo-700 dark:to-indigo-900 pt-20 pb-10 px-6">
         <h2 className="text-3xl font-bold text-white text-center mb-8">
           Upcoming Events
         </h2>
