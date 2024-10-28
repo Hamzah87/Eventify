@@ -48,7 +48,7 @@ export function SearchCard() {
         </div>
       </div>
       <div className="mt-6 flex justify-center">
-        <button className="bg-indigo-600 dark:bg-indigo-500 text-white px-8 py-3 rounded-lg hover:bg-indigo-700 dark:hover:bg-indigo-600 transition-colors font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all">
+        <button className="bg-indigo-600 dark:bg-indigo-500 text-white px-8 py-3 rounded-lg hover:bg-indigo-700 dark:hover:bg-indigo-600 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all">
           Search Events
         </button>
       </div>

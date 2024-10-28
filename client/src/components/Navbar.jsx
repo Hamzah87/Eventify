@@ -1,6 +1,9 @@
 import React from "react";
+import About from '../about.jsx';
+import { Link } from 'react-router-dom';
 import { Calendar, Menu } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
 
 export function Navbar() {
   return (
@@ -39,9 +42,15 @@ export function Navbar() {
               About
             </a>
             <ThemeToggle />
-            <button className="bg-indigo-600 dark:bg-indigo-500 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 dark:hover:bg-indigo-600">
-              Sign In
-            </button>
+            <SignedOut>
+              <SignInButton className="bg-indigo-600 dark:bg-indigo-500 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 dark:hover:bg-indigo-600">
+                Sign In
+              </SignInButton>
+            </SignedOut>
+            
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
           </div>
           <div className="md:hidden flex items-center space-x-4">
             <ThemeToggle />
