@@ -49,4 +49,31 @@ router.get("/events/search", async (req, res) => {
   }
 });
 
+router.get("/events/all", async (req, res) => {
+  let conn;
+  try {
+    let query = `
+      SELECT
+        Event.EventID,
+        Event.EventName,
+        GuestList.GuestListOwner,
+        Schedule.EventDate
+      FROM Event
+      JOIN GuestList ON Event.GuestListID = GuestList.GuestListID
+      JOIN Schedule ON Event.ScheduleID = Schedule.ScheduleID
+      ORDER BY Schedule.EventDate DESC
+    `;
+
+    rows = await db.query(query, params);
+    res.json(Array.isArray(rows) ? rows : [rows]);
+  } catch (error) {
+    console.error("Search error:", error);
+    res.status(500).json({ error: "Internal server error" });
+  } finally {
+    if (conn) {
+      conn.release();
+    }
+  }
+});
+
 module.exports = router;
