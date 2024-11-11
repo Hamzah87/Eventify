@@ -4,6 +4,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import { Navbar } from "./components/Navbar";
 import { SearchCard } from "./components/SearchCard";
 import { FeatureCard } from "./components/FeatureCard";
+import { Link } from "react-router-dom";
 
 function App() {
   return (
@@ -21,9 +22,12 @@ function App() {
                 Discover, create, and manage extraordinary events that bring
                 people together. Your next memorable experience starts here.
               </p>
-              <button className="bg-white dark:bg-gray-800 text-indigo-600 dark:text-indigo-400 px-8 py-3 rounded-lg text-lg font-semibold hover:bg-indigo-50 dark:hover:bg-gray-700 transition-colors shadow-lg">
+              <Link
+                to="/events"
+                className="inline-block bg-white dark:bg-gray-800 text-indigo-600 dark:text-indigo-400 px-8 py-3 rounded-lg text-lg font-semibold hover:bg-indigo-50 dark:hover:bg-gray-700 transition-colors shadow-lg"
+              >
                 Explore Eventify
-              </button>
+              </Link>
             </div>
 
             <div className="max-w-6xl mx-auto px-4 relative z-10 translate-y-16">
