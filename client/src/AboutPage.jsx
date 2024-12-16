@@ -10,7 +10,6 @@ function About() {
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
         <Navbar />
 
-        {/* Welcome Section - Updated with gradient background */}
         <div className="relative bg-gradient-to-br from-indigo-600 to-indigo-800 dark:from-indigo-700 dark:to-indigo-900">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-24">
             <div className="text-center mb-16">
@@ -27,7 +26,6 @@ function About() {
           </div>
         </div>
 
-        {/* Who We Are Section - Updated styling */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="flex flex-col md:flex-row items-center gap-12">
             <div className="md:w-1/2">
@@ -54,7 +52,6 @@ function About() {
           </div>
         </div>
 
-        {/* Our Vision Section - Removed bg-gray-100 and dark:bg-gray-800 */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="flex flex-col md:flex-row-reverse items-center gap-12">
             <div className="md:w-1/2">
