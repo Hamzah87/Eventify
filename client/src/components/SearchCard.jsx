@@ -30,7 +30,7 @@ export function SearchCard() {
       });
 
       const response = await fetch(
-        `http://localhost:3503/api/events/search?${queryParams}`
+        `http://localhost:3000/api/events/search?${queryParams}`
       );
       if (!response.ok) throw new Error("Search failed");
 
