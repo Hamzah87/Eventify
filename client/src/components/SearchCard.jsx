@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Search, Calendar, Users, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export function SearchCard() {
   const [searchParams, setSearchParams] = useState({
@@ -148,6 +149,14 @@ export function SearchCard() {
                     <Users className="h-4 w-4 mr-2" />
                     <span>{event.GuestListOwner}</span>
                   </div>
+                </div>
+                <div className="mt-4 flex justify-end">
+                  <Link
+                    to={`/events/${event.EventID}`}
+                    className="text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300"
+                  >
+                    View Details →
+                  </Link>
                 </div>
               </div>
             ))}
