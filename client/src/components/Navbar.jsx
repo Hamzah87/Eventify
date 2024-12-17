@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Calendar, Menu, UserCircle } from "lucide-react";
+import { Calendar, Menu, UserCircle, X } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
 import { useAuth } from "../contexts/AuthContext";
 
 export function Navbar() {
   const { user, logout } = useAuth();
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const dropdownRef = useRef(null);
   const navigate = useNavigate();
 
@@ -31,6 +32,7 @@ export function Navbar() {
   const handleLogout = () => {
     setDropdownOpen(false);
     logout();
+    navigate("/");
   };
 
   return (
@@ -102,10 +104,74 @@ export function Navbar() {
           </div>
           <div className="md:hidden flex items-center space-x-4">
             <ThemeToggle />
-            <Menu className="h-6 w-6 text-gray-700 dark:text-gray-300" />
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="text-gray-700 dark:text-gray-300"
+            >
+              {mobileMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
+            </button>
           </div>
         </div>
       </div>
+      {mobileMenuOpen && (
+        <div className="md:hidden absolute top-16 left-0 right-0 bg-white dark:bg-gray-900 shadow-lg">
+          <div className="px-4 py-2 space-y-2">
+            <Link
+              to="/"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 py-2"
+            >
+              Home
+            </Link>
+            <Link
+              to="/events"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 py-2"
+            >
+              Events
+            </Link>
+            <Link
+              to="/about"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 py-2"
+            >
+              About
+            </Link>
+            {user ? (
+              <>
+                <Link
+                  to="/dashboard"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 py-2"
+                >
+                  Dashboard
+                </Link>
+                <button
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    handleLogout();
+                  }}
+                  className="block w-full text-left text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 py-2"
+                >
+                  Log Out
+                </button>
+              </>
+            ) : (
+              <Link
+                to="/login"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 py-2"
+              >
+                Sign In
+              </Link>
+            )}
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
